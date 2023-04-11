@@ -159,4 +159,60 @@ function fib(num) {
     return fib(num-1) + fib(num-2);
 }
 
+function recursiveRange(num) {
 
+    if (num <= 0) {
+        return 0;
+    }
+
+    return num + recursiveRange(num-1);
+}
+
+function productOfArray(arr) {
+
+    if (arr.length === 0) {
+        return 1;
+    }
+
+    let num = arr[0];
+    let arr2 = arr.slice(1);
+
+    console.log("num : ", num);
+    console.log("arr2 : ", arr2);
+
+    return num * productOfArray(arr2);
+}
+
+
+function factorial(num) {
+    if (num <= 1) {
+        return 1;
+    }
+
+    return num * factorial(num-1);
+}
+
+
+function power(num1, num2) {
+
+    if (num2 <= 0) {
+        return 1;
+    }
+
+    return num1 * power(num1, num2-1);
+}
+
+
+function collectOddValues2(arr) {
+    let newArr = [];
+    if (arr.length === 0) {
+        return newArr;
+    }
+
+    if (arr[0] % 2 !== 0 ) {
+        newArr.push(arr[0]);
+    }
+
+    newArr = newArr.concat(collectOddValues2(arr.slice(1)));
+    return newArr;
+}
