@@ -232,7 +232,7 @@ function capitalizeFirst (arr) {
     //     result.push(tmp);
     // }
     // console.log('재귀아님 : ' + result);
-    
+
 }
 console.log("코딩 연습 19: capitalizeFirst");
 console.log(capitalizeFirst(['car','taco','banana'])); // ['Car','Taco','Banana']
