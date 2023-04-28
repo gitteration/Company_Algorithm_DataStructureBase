@@ -54,7 +54,7 @@ function fib(n) {
  */
 
 console.log('fib')
-console.log(fib(6));
+console.log(fib(5));
 
 //코딩연습 15 : reverse -> 새 문자열을 역으로 반환하는 reverse라는 재귀 함수
 function reverse(str) {
