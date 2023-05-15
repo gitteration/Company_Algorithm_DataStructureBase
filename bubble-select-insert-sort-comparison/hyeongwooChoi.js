@@ -113,6 +113,7 @@ function bubbleSort_test(arr, comparator) {
     // 정렬된 배열을 반환합니다.
     return arr;
 }
+
 console.log(bubbleSort_test([4, 20, 12, 10, 7, 9])); // [4, 7, 9, 10, 12, 20]
 console.log(bubbleSort_test([0, -10, 7, 4])); // [-10, 0, 4, 7]
 console.log(bubbleSort_test([1, 2, 3])); // [1, 2, 3]
