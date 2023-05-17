@@ -31,6 +31,7 @@ function binarySearch(arr, elm) {
     let start = 0;
     let end = arr.length - 1;
     let middle = Math.floor((start + end) / 2); ///중간점을 선택하는 과정을 반복한다
+
     ///우리가 여기에서 하려는 작업은 계속 연산을 하면서
     //arr[middle]가 우리가 찾는 값과 같지 않으면 루프는 계속 작동할 것이다.
     while (arr[middle] != elm && start <= end) {
