@@ -1,4 +1,14 @@
 /**
+ * @title 피봇 헬퍼
+ * @
+ */
+
+/**
+ * @title 퀵 정렬
+ * 
+ */
+
+/**
  * @title radix sort helper
  * @desc 내가 생각한 방식
  */
@@ -6,16 +16,14 @@
 // function getDigit(num, i){
 //     const strNumber = String(Math.abs(num));
 //     const index = strNumber.length - i - 1;
-//     if(index < 0 ){
-//         return 0;
-//     }
+
 //     return Number(strNumber[index]);
 // }
 
 // function digitCount(num){
 //     const strNumber = String(Math.abs(num));
 
-//     return strNumber.length
+//     return strNumber.length 
 // }
 
 
@@ -36,7 +44,7 @@ function digitCount(num){
 
 function mostDigits(nums){
     let maxDigits = 0;
-
+    
     for(let i = 0; i < nums.length; i++ ){
         maxDigits = Math.max(maxDigits, digitCount(nums[i]));
     }
@@ -45,7 +53,7 @@ function mostDigits(nums){
 };
 
 /**
- * @pseudocode
+ * @pseudocode 
  * 1. 가장 큰 자리수가 몇 자리인지 파악
  * 2. 0 부터 가장 큰 자리수 까지 Loop
  * 3. 진행할 떄마다 갓 자리수 버킷 생성
@@ -61,7 +69,7 @@ function radixSort(nums){
         let digitBuckets = Array.from({length:10}, () => []);
         for(let i = 0; i < nums.length; i++){
             let digit = getDigit(nums[i],k);
-            digitBuckets[digit].push(nums[i]);
+            digitBuckets[digit].push(nums[i]); 
         }
         console.log(digitBuckets);
         nums = [].concat(...digitBuckets);
@@ -70,24 +78,35 @@ function radixSort(nums){
 
     return nums;
 }
-// const test = radixSort([23, 345, 5467, 12, 2345, 9852]);
-//
-// console.log(test);
+const test = radixSort([23, 345, 5467, 12, 2345, 9852]);
 
-function solution(array, commands) {
-    var answer = [];
+console.log(test);
+/**
+ * @title 코딩 연습 43
+ */
 
-    for(let i = 0 ; i < commands.length ; i++){
-        let cloneArray = array;
-        const start = commands[i][0] - 1;
-        const end = commands[i][1];
-        const index = commands[i][2] - 1;
+/**
+ * @title 코딩 연습 44
+ */
 
-        cloneArray = cloneArray.slice(start,end).sort((a,b) => a -b);
+/**
+ * @title 코딩 연습 45
+ */
 
-        answer.push(cloneArray[index]);
-    }
+/**
+ * @title 코딩 연습 46
+ */
 
-    return answer;
-}
+/**
+ * @title 코딩 연습 47
+ */
+
+/**
+ * @title 코딩 연습 48
+ */
+
+/**
+ * @title 코딩 연습 49
+ */
+
 
