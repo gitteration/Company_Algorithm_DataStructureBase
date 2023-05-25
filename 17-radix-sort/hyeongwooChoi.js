@@ -49,3 +49,16 @@ function radixSort(nums) {
 }
 
 radixSort([23, 345, 5467, 12, 2345, 9852]);
+
+
+function index(n) {
+    let answer = 0;
+    while (n) {
+        answer += (n%10);
+
+        n = Math.floor(n/10);
+    }
+    return answer;
+}
+
+console.log(index(12));

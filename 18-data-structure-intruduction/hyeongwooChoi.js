@@ -36,6 +36,5 @@ class Student {
 let firstStudent = new Student("Colt", "Steele", 1);
 let lastStudent = new Student("Blue", "Steele", 2);
 
-
 //Class Methods
 console.log(Student.enrollStudents([firstStudent, lastStudent]));
