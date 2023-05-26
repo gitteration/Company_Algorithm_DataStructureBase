@@ -17,7 +17,6 @@ function pivot(arr, start = 0, end = arr.length + 1) {
             swap(arr, start, i)
         }
         swap(arr, start, swapIdx)
-        console.log("피벗 함수 :: ", arr)
         return swapIdx;
     }
 }
@@ -34,7 +33,8 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
         //right
         quickSort(arr, pivotIndex + 1, right);
     }
+    console.log(arr);
     return arr
 }
 
-quickSort([4, 6, 9, 1, 2, 5]);
+quickSort([412, 6, 93, 1333, 2, 5]);
