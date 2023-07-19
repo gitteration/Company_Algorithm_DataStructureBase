@@ -1,4 +1,4 @@
-class MaxBinaryHeap {
+class PriorityQueue {
     constructor() {
         this.values = [];
     }
@@ -6,8 +6,9 @@ class MaxBinaryHeap {
     /**
      * Insert 메소드
      */
-    insert(element) {
-        this.values.push(element);
+    enqueue(val, priority) {
+        let newNode = new Node(val, priority);
+        this.values.push(newNode);
         this.bubbleUp();
     }
 
@@ -17,8 +18,9 @@ class MaxBinaryHeap {
         while (true) {
             let parentIdx = Math.floor((idx - 1) / 2);
             let parent = this.values[parentIdx];
-            if (element <= parent) break;
-            this.values[parentIdx] = parent;
+            if (element.priority <= parent.priority) break;
+            this.values[parentIdx] = element;
+            this.values[idx] = parent;
             idx = parentIdx;
         }
     }
@@ -26,7 +28,7 @@ class MaxBinaryHeap {
     /**
      * extractMax 메소드
      */
-    extractMax() {
+    dequeue() {
         const max = this.values[0];
         const end = this.values.pop();
         if (this.values.length > 0) {
@@ -49,14 +51,14 @@ class MaxBinaryHeap {
 
             if (leftChildIdx < length) {
                 leftChild = this.values[leftChildIdx];
-                if (leftChild > element) {
+                if (leftChild.priority > element.priority) {
                     swap = leftChildIdx;
                 }
             }
 
             if (rightChildIdx < length) {
                 rightChild = this.values[rightChildIdx];
-                if ((swap === null && rightChild > element) || (swap !== null && rightChild > leftChild)) {
+                if ((swap === null && rightChild.priority > element) || (swap !== null && rightChild.priority > leftChild)) {
                     swap = rightChildIdx;
                 }
             }
@@ -67,12 +69,15 @@ class MaxBinaryHeap {
     }
 }
 
-let heap = new MaxBinaryHeap();
-heap.insert(41);
-heap.insert(39);
-heap.insert(55);
-heap.insert(32);
-heap.insert(34);
-heap.insert(12);
-heap.insert(22);
+class Node {
+    constructor(val, priority) {
+        this.val = val;
+        this.prio = priority;
+    }
+}
+
+let ER = new PriorityQueue();
+ER.enqueue("common cold", 1);
+ER.enqueue("gunshot wound", 5);
+ER.enqueue("high fever", 2);
 
