@@ -8,7 +8,7 @@ class Graph{
     }
 
     /**
-     * 점(vertex)
+     * 점(vertex) 추가 솔루션
      *
      */
     addVertex(vertex) {
@@ -16,7 +16,7 @@ class Graph{
     }
 
     /**
-     * 선(Edge)
+     * 선(Edge) 추가 솔루션
      */
     addEdge(v1, v2) {
         this.adjacencyList[v1].push(v2);
@@ -33,6 +33,16 @@ class Graph{
         this.adjacencyList[vertex2] = this.adjacencyList[vertex2].filter(
             v => v !== vertex1
         );
+    }
+
+    /**
+     * 점(vertex) 제거 솔루션
+     */
+    removeVertex(vertex) {
+        while (this.adjacencyList[vertex].length) {
+            const adjacentVertex = this.adjacencyList[vertex].pop();
+            this.removeEdge(vertex, adjacentVertex);
+        }
     }
 }
 
